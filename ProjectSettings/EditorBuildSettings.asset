@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/CadeScene.unity
+    guid: 61b64ab8a5575ad4b8266823aca0aaf2
+  - enabled: 1
+    path: Assets/Scenes/CooperScene.unity
+    guid: 2fcbecb6ee60225449d8d737f0e5ed00
+  - enabled: 1
+    path: Assets/Scenes/SterlingScene.unity
+    guid: e62b6a5fc4e6cf84fb59ca6d830e9fa9
   m_configObjects: {}

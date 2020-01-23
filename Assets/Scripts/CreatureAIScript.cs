@@ -25,6 +25,8 @@ public class CreatureAIScript : MonoBehaviour
     public GameObject Target;
     public float ChaseSpeed = 2.0f;
 
+    public float detectionRadius;
+
 
 
 
@@ -69,36 +71,41 @@ public class CreatureAIScript : MonoBehaviour
         if (Vector3.Distance(this.transform.position, PatrolPoints[PatrolPointInd].transform.position) >= 2)
         {
             agent.SetDestination(PatrolPoints[PatrolPointInd].transform.position);
-            //creature.Move(agent.desiredVelocity, false, false);
 
         }
         else if (Vector3.Distance(this.transform.position, PatrolPoints[PatrolPointInd].transform.position) <= 2)
         {
             PatrolPointInd += 1;
-            if (PatrolPointInd > PatrolPoints.Length)
+            if (PatrolPointInd >= PatrolPoints.Length)
             {
                 PatrolPointInd = 0;
             }
         }
-        else
+
+        if (Vector3.Distance(transform.position, Target.transform.position) <= detectionRadius)
         {
-            //creature.Move(Vector3.zero, false, false);
+            state = State.CHASE;
         }
+        
     }
 
     void Chase()
     {
         agent.speed = ChaseSpeed;
         agent.SetDestination(Target.transform.position);
-        //creature.Move(agent.desiredVelocity, false, false);
+
+        if (Vector3.Distance(transform.position, Target.transform.position) >= detectionRadius)
+        {
+            state = State.PATROL;
+        }
     }
 
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.tag == "Player")
-        {
-            state = CreatureAIScript.State.CHASE;
-            Target = coll.gameObject;
-        }
+        //if (coll.tag == "Player")
+        //{
+        //    state = CreatureAIScript.State.CHASE;
+        //    Target = coll.gameObject;
+        //}
     }
 }
