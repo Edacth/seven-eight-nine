@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Vector3 camRotation;
-    public Vector3 forwardVector;
-    public Vector3 motion;
-    public float mouseSensitivity = 20f;
+    Vector3 forwardVector;
+    Vector3 motion;
+    public float mouseSensitivity = 60f;
+    public float playerSpeed = 5f;
 
     public GameObject camera;
+    Rigidbody rb;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -27,16 +29,33 @@ public class PlayerController : MonoBehaviour
 
         //camera.transform.Rotate(rotationChange, Space.World);
         camera.transform.eulerAngles += rotationChange;
-        Debug.Log(rotationChange);
 
-        Debug.DrawRay(transform.position, camera.transform.forward.normalized * 5);
+        //Debug.DrawRay(transform.position, camera.transform.forward.normalized * 5);
 
-        // Get movement input
+        
+        
+    }
+
+    private void FixedUpdate()
+    {
+        float angle = (camera.transform.rotation.eulerAngles.y) * (Mathf.PI / 180); // Convert to radians'
+
+        forwardVector.x = (float)Mathf.Sin(angle);
+        forwardVector.z = (float)Mathf.Cos(angle);
+        forwardVector.Normalize();
+        Debug.DrawRay(transform.position, forwardVector * 10);
+        Debug.Log(forwardVector);
+
         motion = Vector3.zero;
-        motion.x = Input.GetAxis("Vertical");
+        motion.x = forwardVector.x * playerSpeed * Input.GetAxis("Vertical");
+        motion.z = forwardVector.z * playerSpeed * Input.GetAxis("Vertical");
+
+        // Project on plane is magical
+        motion = Vector3.ProjectOnPlane(camera.transform.forward * Input.GetAxisRaw("Vertical") + camera.transform.right * Input.GetAxisRaw("Horizontal"), Vector3.up);
 
         // Move player
-        transform.position += motion * Time.deltaTime;
-        
+        //transform.position += motion * Time.deltaTime;
+        //rb.AddForce(motion * 100 * Time.deltaTime, ForceMode.Force);
+        rb.MovePosition(transform.position + motion * 0.1f);
     }
 }
