@@ -75,11 +75,14 @@ public class CreatureAIScript : MonoBehaviour
         }
         else if (Vector3.Distance(this.transform.position, PatrolPoints[PatrolPointInd].transform.position) <= 2)
         {
-            PatrolPointInd += 1;
-            if (PatrolPointInd >= PatrolPoints.Length)
-            {
-                PatrolPointInd = 0;
-            }
+            //PatrolPointInd += 1;
+            //if (PatrolPointInd >= PatrolPoints.Length)
+            //{
+            //    PatrolPointInd = 0;
+                
+            //}
+            PatrolPointInd = UnityEngine.Random.Range(0, PatrolPoints.Length);
+            Debug.Log("Length: " + PatrolPoints.Length + " Ind: " + PatrolPointInd);
         }
 
         if (Vector3.Distance(transform.position, Target.transform.position) <= detectionRadius)

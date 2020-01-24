@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameTimer : MonoBehaviour
 {
     public float gameLength = 0;
-    Interval[] intervals;
+    public Interval[] intervals;
+
+    public MonsterEnabler monsterEnabler;
     
     void Start()
     {
@@ -18,14 +20,17 @@ public class GameTimer : MonoBehaviour
 
         for (int i = 0; i < intervals.Length; i++)
         {
-            if (!intervals[i].activated || intervals[i].time < gameLength)
+            if (!intervals[i].activated && intervals[i].time < gameLength)
             {
-
+                Debug.Log("Enable");
+                monsterEnabler.EnableMonster();
+                intervals[i].activated = true;
             }
         }
     }
 }
 
+[System.Serializable]
 public class Interval
 {
     public float time;

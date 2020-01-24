@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class LoseDetection : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] monsters;
+    public float deathRadius;
+
+    private void FixedUpdate()
     {
-        
+        for (int i = 0; i < monsters.Length; i++)
+        {
+            if (Vector3.Distance(monsters[i].transform.position, transform.position) < deathRadius)
+            {
+
+                Lose();
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Lose()
     {
-        
+        Debug.Log("LOSER LOL");
     }
 }
