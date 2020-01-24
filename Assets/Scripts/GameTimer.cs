@@ -22,7 +22,6 @@ public class GameTimer : MonoBehaviour
         {
             if (!intervals[i].activated && intervals[i].time < gameLength)
             {
-                Debug.Log("Enable");
                 monsterEnabler.EnableMonster();
                 intervals[i].activated = true;
             }

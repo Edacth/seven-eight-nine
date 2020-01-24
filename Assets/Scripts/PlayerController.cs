@@ -21,6 +21,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
 
         // Translate mouse movement to rotation
         Vector3 rotationChange = Vector3.zero;
