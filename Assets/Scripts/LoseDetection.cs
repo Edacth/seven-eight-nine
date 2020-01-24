@@ -11,7 +11,7 @@ public class LoseDetection : MonoBehaviour
     {
         for (int i = 0; i < monsters.Length; i++)
         {
-            if (Vector3.Distance(monsters[i].transform.position, transform.position) < deathRadius)
+            if (Vector3.Distance(monsters[i].transform.position, transform.position) < deathRadius && monsters[i].activeInHierarchy == true)
             {
 
                 Lose();
