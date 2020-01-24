@@ -32,8 +32,6 @@ public class PlayerController : MonoBehaviour
 
         //Debug.DrawRay(transform.position, camera.transform.forward.normalized * 5);
 
-        
-        
     }
 
     private void FixedUpdate()
@@ -44,7 +42,6 @@ public class PlayerController : MonoBehaviour
         forwardVector.z = (float)Mathf.Cos(angle);
         forwardVector.Normalize();
         Debug.DrawRay(transform.position, forwardVector * 10);
-        Debug.Log(forwardVector);
 
         motion = Vector3.zero;
         motion.x = forwardVector.x * playerSpeed * Input.GetAxis("Vertical");
