@@ -34,7 +34,7 @@ public class MonsterTeleporter : MonoBehaviour
             for (int i = 0; i < monsters.Length; i++)
             {
                 float dist = Vector3.Distance(transform.position, monsters[i].transform.position);
-                if (dist > longestDist)
+                if (dist > longestDist && monsters[i].activeSelf)
                 {
                     longestDist = dist;
                     farthestIndex = i;
