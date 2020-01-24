@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9033401148247612499}
+  - component: {fileID: 4156543753107432746}
   m_Layer: 0
   m_Name: FreeDoorWay02
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4156543753107432746
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033401148247612496}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35134, y: 3, z: 2}
+  m_Center: {x: 0.17548394, y: 1.5, z: -1}
 --- !u!1001 &9033401147830854722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94,6 +108,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 868760bbd0727cf4583b5b34c0bb4c89,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b66145042742d74e85fb4e303b1a324, type: 2}
     - target: {fileID: -927199367670048503, guid: 868760bbd0727cf4583b5b34c0bb4c89,
         type: 3}
       propertyPath: m_Name
@@ -174,6 +193,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door2
       objectReference: {fileID: 0}
+    - target: {fileID: 8249115927918959592, guid: a967222a64d21654781dea8ae10da681,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 11ace9148a0188042aae78fe63671dcb, type: 2}
+    - target: {fileID: 8249115927918959592, guid: a967222a64d21654781dea8ae10da681,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1be66b8b61e1793448cdfb6c08d39609, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a967222a64d21654781dea8ae10da681, type: 3}
 --- !u!4 &4046381689625873132 stripped
