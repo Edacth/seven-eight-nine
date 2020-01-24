@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class WinDetection : MonoBehaviour
 {
-    void Update()
+    public int numToWin;
+    public int numCollected;
+
+    void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (numCollected >= numToWin)
         {
             Win();
         }       

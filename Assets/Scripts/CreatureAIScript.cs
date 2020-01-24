@@ -82,7 +82,7 @@ public class CreatureAIScript : MonoBehaviour
                 
             //}
             PatrolPointInd = UnityEngine.Random.Range(0, PatrolPoints.Length);
-            Debug.Log("Length: " + PatrolPoints.Length + " Ind: " + PatrolPointInd);
+            //Debug.Log("Length: " + PatrolPoints.Length + " Ind: " + PatrolPointInd);
         }
 
         if (Vector3.Distance(transform.position, Target.transform.position) <= detectionRadius)
