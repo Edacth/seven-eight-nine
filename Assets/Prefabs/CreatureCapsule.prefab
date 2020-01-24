@@ -143,6 +143,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   ChaseSpeed: 2.5
   detectionRadius: 15
+  yellSound: {fileID: 8300000, guid: 0e23403e03e10e94196bff7ea1e37f1b, type: 3}
 --- !u!82 &3166095935621329622
 AudioSource:
   m_ObjectHideFlags: 0

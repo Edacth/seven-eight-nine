@@ -28,7 +28,8 @@ public class CreatureAIScript : MonoBehaviour
     public float detectionRadius;
 
 
-
+    bool yell;
+    public AudioClip yellSound;
 
 
 
@@ -59,10 +60,17 @@ public class CreatureAIScript : MonoBehaviour
                     break;
                 case State.CHASE:
                     Chase();
+                    if (yell)
+                    {
+                        AudioSource source = GetComponent<AudioSource>();
+                        source.PlayOneShot(yellSound);
+                    }
                     break;
             }
             yield return null;
         }
+
+
     }
 
     void Patrol()
