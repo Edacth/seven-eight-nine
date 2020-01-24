@@ -4374,6 +4374,7 @@ MonoBehaviour:
   - {fileID: 1954018633}
   - {fileID: 665941359}
   deathRadius: 1
+  loseScreen: {fileID: 1748401835}
 --- !u!114 &270995101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4400,13 +4401,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f14aba355367ca04a8e530b538e68346, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.32
+  m_Volume: 0.051
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 31
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -9766,6 +9767,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3166095935621329622, guid: ffd9fb93914b7be4e92f56e1b168e4f4,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166095935621329622, guid: ffd9fb93914b7be4e92f56e1b168e4f4,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.756
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166095935621329622, guid: ffd9fb93914b7be4e92f56e1b168e4f4,
+        type: 3}
+      propertyPath: Priority
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8992362842239716742, guid: ffd9fb93914b7be4e92f56e1b168e4f4,
         type: 3}
       propertyPath: PatrolPoints.Array.data[0]
@@ -11221,11 +11237,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CreatureCapsule
-      objectReference: {fileID: 0}
-    - target: {fileID: 8992362842239716743, guid: ffd9fb93914b7be4e92f56e1b168e4f4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8992362842239716749, guid: ffd9fb93914b7be4e92f56e1b168e4f4,
         type: 3}
@@ -17094,6 +17105,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8869491762540001806, guid: cc88a7ac8cc764e4f8b6f784e58d9857,
     type: 3}
   m_PrefabInstance: {fileID: 1729443355}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1748401835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1150388809, guid: aadeedc22359070459611d6afe0b50d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 641808054}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1749424137
 PrefabInstance:
