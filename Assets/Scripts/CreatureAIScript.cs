@@ -57,6 +57,10 @@ public class CreatureAIScript : MonoBehaviour
             {
                 case State.PATROL:
                     Patrol();
+                    if (!yell)
+                    {
+                        yell = true;
+                    }
                     break;
                 case State.CHASE:
                     Chase();
@@ -64,6 +68,7 @@ public class CreatureAIScript : MonoBehaviour
                     {
                         AudioSource source = GetComponent<AudioSource>();
                         source.PlayOneShot(yellSound);
+                        yell = false;
                     }
                     break;
             }
