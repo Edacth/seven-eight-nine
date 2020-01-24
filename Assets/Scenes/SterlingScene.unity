@@ -777,36 +777,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7707832915995043274, guid: aadeedc22359070459611d6afe0b50d1,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.7971698
-      objectReference: {fileID: 0}
-    - target: {fileID: 7707832915995043274, guid: aadeedc22359070459611d6afe0b50d1,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.9337697
-      objectReference: {fileID: 0}
-    - target: {fileID: 7707832915995043274, guid: aadeedc22359070459611d6afe0b50d1,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7707832917353343444, guid: aadeedc22359070459611d6afe0b50d1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7707832917353343444, guid: aadeedc22359070459611d6afe0b50d1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7707832917353343444, guid: aadeedc22359070459611d6afe0b50d1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -55.66
-      objectReference: {fileID: 0}
     - target: {fileID: 7707832917591071946, guid: aadeedc22359070459611d6afe0b50d1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -917,6 +887,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7707832915995043275, guid: aadeedc22359070459611d6afe0b50d1, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aadeedc22359070459611d6afe0b50d1, type: 3}
