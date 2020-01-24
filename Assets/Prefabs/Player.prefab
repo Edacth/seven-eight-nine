@@ -393,7 +393,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 60
-  playerSpeed: 0.1
+  verticalSpeed: 0.1
+  horizontalSpeed: 0.07
   camera: {fileID: 1868322879}
 --- !u!1001 &4986261036205384968
 PrefabInstance:

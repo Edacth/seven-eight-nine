@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour
     Vector3 forwardVector;
     Vector3 motion;
     public float mouseSensitivity = 60f;
-    public float playerSpeed = 0.1f;
+    public float verticalSpeed = 0.1f;
+    public float horizontalSpeed = 0.07f;
 
     public GameObject camera;
     Rigidbody rb;
@@ -54,13 +55,13 @@ public class PlayerController : MonoBehaviour
         //Debug.Log(Input.GetAxis("Vertical"));
 
         // Project on plane is magical
-        motion = Vector3.ProjectOnPlane(camera.transform.forward * Input.GetAxisRaw("Vertical") + camera.transform.right * Input.GetAxisRaw("Horizontal"), Vector3.up);
-        Debug.Log((motion));
-        Debug.Log((motion * playerSpeed));
+        motion = Vector3.ProjectOnPlane(camera.transform.forward * Input.GetAxisRaw("Vertical") * verticalSpeed + camera.transform.right * Input.GetAxisRaw("Horizontal") * horizontalSpeed, Vector3.up);
+        //Debug.Log((motion));
+        //Debug.Log((motion * verticalSpeed));
         // Move player
         //transform.position += motion * Time.deltaTime;
         //rb.AddForce(motion * 500 * Time.deltaTime, ForceMode.Force);
-        rb.MovePosition(transform.position + motion * playerSpeed);
+        rb.MovePosition(transform.position + motion);
         //rb.velocity = motion * playerSpeed;
     }
 }
