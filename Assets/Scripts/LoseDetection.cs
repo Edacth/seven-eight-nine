@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoseDetection : MonoBehaviour
 {
     public GameObject[] monsters;
     public float deathRadius;
+    public GameObject loseScreen;
 
     private void FixedUpdate()
     {
@@ -21,6 +23,11 @@ public class LoseDetection : MonoBehaviour
 
     public void Lose()
     {
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        loseScreen.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         Debug.Log("LOSER LOL");
     }
 }
